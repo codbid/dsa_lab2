@@ -4,7 +4,7 @@
 #include "bstree.h"
 #include <sys/time.h>
 
-#define MAX_BUFFER_SIZE 6
+#define MAX_BUFFER_SIZE 33
 #define STEPS 200001
 #define DEBUG 0
 
@@ -23,8 +23,8 @@ int getrand(int min, int max)
 int main()
 {
     char words[STEPS][MAX_BUFFER_SIZE];
-    //FILE *fp = popen("sort -r text.txt", "r");  //bad
-    FILE *fp = popen("shuf text.txt", "r");   //average
+    //FILE *fp = popen("sort -r words.txt", "r");  //bad
+    FILE *fp = popen("shuf words.txt", "r");   //average
     for (int i = 0; i < STEPS; i++)
     {
         char *buffer = malloc(MAX_BUFFER_SIZE * sizeof(char));
